@@ -1,0 +1,354 @@
+{% extends 'blog/basic.html' %}
+{%block css%}
+a{
+    outline: none;
+}
+.dropdown-item:focus, .dropdown-item:hover
+{
+    background-color:white;
+    color:black;
+}
+.dropdown-item:focus, .dropdown-item
+{
+    color:white;
+}
+#img-top
+{
+ height:250px;
+ width:300px; 
+ margin-left:85px;
+}
+#img2
+{
+height:500px;
+width:100px;    
+}
+#tit
+{
+margin-left:85px;
+}
+#tit1
+{
+margin-left:85px;
+}
+#medium1
+{
+display:none;
+}
+#medium
+{
+display:none;
+}
+#small
+{
+display:none;
+}
+#big
+{
+    display:inline-block;
+}
+@media only screen and (max-width:360px)
+{
+#big{
+display:none;
+}
+#small
+{
+display:inline-block;
+}
+#medium
+{
+    display: none;
+}
+#medium1
+{
+display:none;
+}
+#img-top
+{
+ height:250px; 
+ margin-left:45px;
+}
+#img2
+{
+height:300px;
+width:200px;    
+}
+#tit
+{
+margin-left:50px;
+}
+#tit1
+{
+margin-left:50px;
+}
+}
+@media only screen and (min-width:375px) and (max-width: 400px)
+{
+#big{
+display:none;
+}
+#small
+{
+display:inline-block;
+}
+#medium
+{
+    display: none;
+}
+#medium1
+{
+display:none;
+}
+#img-top
+{
+ height:250px; 
+ margin-left:55px;
+}
+#img2
+{
+height:300px;
+width:200px;    
+}
+#tit
+{
+margin-left:58px;
+}
+#tit1
+{
+margin-left:58px;
+}
+}
+@media only screen and (min-width:414px) and (max-width: 500px)
+{
+#big{
+display:none;
+}
+#small
+{
+display:inline-block;
+}
+#medium
+{
+    display: none;
+}
+#medium1
+{
+display:none;
+}
+#img-top
+{
+ height:250px; 
+ margin-left:68px;
+}
+#img2
+{
+height:300px;
+width:200px;    
+}
+#tit
+{
+margin-left:67px;
+}
+#tit1
+{
+margin-left:67px;
+}
+}
+@media only screen and (min-width:900px) and (max-width: 1200px)
+{
+#big{
+display:none;
+}
+#small
+{
+display:none;
+}
+#medium
+{
+display:none;
+}
+#medium1
+{
+display:inline-block;
+}
+#img-top
+{
+ height:250px; 
+ margin-left:90px;
+}
+#tit
+{
+margin-left:90px;
+}
+#tit1
+{
+margin-left:90px;
+}
+}
+@media only screen and (min-width:768px) and (max-width: 900px)
+{
+#big{
+display:none;
+}
+#small
+{
+display:none;
+}
+#medium1
+{
+display:none;
+}
+#medium
+{
+display:inline-block;
+}
+#img-top
+{
+ height:250px; 
+ margin-left:68px;
+}
+#tit
+{
+margin-left:75px;
+}
+#tit1
+{
+margin-left:75px;
+}
+
+}
+{%endblock%}
+{% block body %}
+ <div class="container "  style="margin-top: 30px;">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="text-align: center;">
+                        <img src="/media/images/nature.jpg" class="d-block w-100" alt="..." id="img2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>First slide label</h5>
+                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="text-align: center;">
+                        <img src="/media/images/flower.jpg" class="d-block w-100" alt="..." id="img2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Second slide label</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="text-align: center;">
+                        <img src="/media/images/nature2.jpg" class="d-block w-100" alt="..." id="img2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            
+        </div>
+           <div  id="big" class="md-12">
+            <div class="row my-5">
+                {%for photo in photos%}
+                <div id="con" style="width: 22rem;">
+                   <a href="/blog/Imageview/{{photo.id}}"> <img src="/media/{{photo.image}}"  id="img-top" alt="..." ></a>
+                    <span id="tit" class="card-title text-secondary">{{photo.category}}</span><span class="text-light" style="margin-left: 73px;">Uploaded By:<a href="#" style="text-decoration: none;"><i>{{photo.upload_by}}</i></a></span><br/>
+                    <span id="tit1" class="text-secondary">{{photo.title}}</span>
+                </div>
+                {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+            </div>
+            <div class="row  my-5">
+                {%endif%}
+                {%endfor%}
+            </div>
+        </div>
+        <div  id="medium" class="md-12">
+            <div class="row my-5">
+                {%for photo in photos%}
+                <div id="con" style="width: 22rem;">
+                   <a href="/blog/Imageview/{{photo.id}}"> <img src="/media/{{photo.image}}"  id="img-top" alt="..." ></a>
+                    <span id="tit" class="card-title text-secondary">{{photo.category}}</span><span class="text-light" style="margin-left: 73px;">Uploaded By:<a href="#" style="text-decoration: none;"><i>{{photo.upload_by}}</i></a></span><br/>
+                    <span id="tit1" class="text-secondary">{{photo.title}}</span>
+                </div>
+                {% if forloop.counter|divisibleby:2 and forloop.counter > 0 and not forloop.last %}
+            </div>
+            <div class="row  my-5">
+                {%endif%}
+                {%endfor%}
+            </div>
+        </div>
+        <div  id="medium1" class="md-12">
+            <div class="row my-5 " style="margin-left:100px;">
+                {%for photo in photos%}
+                <div id="con" style="width: 22rem;">
+                   <a href="/blog/Imageview/{{photo.id}}"> <img src="/media/{{photo.image}}"  id="img-top" alt="..." ></a>
+                    <span id="tit" class="card-title text-secondary">{{photo.category}}</span><span class="text-light" style="margin-left: 68px;">Uploaded By:<a href="#" style="text-decoration: none;"><i>{{photo.upload_by}}</i></a></span><br/>
+                    <span id="tit1" class="text-secondary">{{photo.title}}</span>
+                </div>
+                {% if forloop.counter|divisibleby:2 and forloop.counter > 0 and not forloop.last %}
+            </div>
+            <div class="row  my-5" style="margin-left:100px;">
+                {%endif%}
+                {%endfor%}
+            </div>
+        </div>
+        <div  id="small" class="md-12">
+            <div class="row my-5">
+                {%for photo in photos%}
+                <div id="con" style="width: 22rem;">
+                   <a href="/blog/Imageview/{{photo.id}}"> <img src="/media/{{photo.image}}"  id="img-top" alt="..." ></a>
+                    <span id="tit" class="card-title text-secondary">{{photo.category}}</span><span class="text-light" style="margin-left: 91px;">Uploaded By:<a href="#" style="text-decoration: none;"><i>{{photo.upload_by}}</i></a></span><br/>
+                    <span id="tit1" class="text-secondary">{{photo.title}}</span>
+                </div>
+                {% if forloop.counter|divisibleby:1 and forloop.counter > 0 and not forloop.last %}
+            </div>
+            <div class="row  my-5">
+                {%endif%}
+                {%endfor%}
+            </div>
+        </div>
+
+{% if photos.has_other_pages %}
+  <nav aria-label="...">
+  <ul class="pagination justify-content-center">
+    {% if photos.has_previous %}
+      <li class="page-item"><a href="?page={{ photos.previous_page_number }}" class="page-link">Previous</a></li>
+    {% else %}
+      <li class="disabled text-light" tabindex="-1" aria-disabled="true"><span></span></li>
+    {% endif %}
+    {% for i in photos.paginator.page_range %}
+      {% if photos.number == i %}
+        <li class="page-item active" aria-current="page"><a href="#" class="page-link"><span>{{ i }} <span class="sr-only">(current)</span></span></a></li>
+      {% else %}
+        <li class="page-item"><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if photos.has_next %}
+      <li class="page-item"><a  href="?page={{ photos.next_page_number }}" class="page-link">Next</a></li>
+    {% else %}
+      <li class="disabled text-light" tabindex="-1" aria-disabled="true"><span></span></li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+
+   
+
+{% block js %}
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0"></script>
+ {% endblock %}
+{% endblock %}

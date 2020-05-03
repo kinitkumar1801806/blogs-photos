@@ -1,0 +1,268 @@
+{% extends 'blog/basic.html' %}
+{%block css%}
+img
+{
+  height: 450px;
+  width: 1024px;  
+}
+#medium
+{
+    display:none;
+}
+#big
+{
+    display:inline-block;
+}
+@media only screen and (max-width:360px)
+{
+    #big
+{
+    display:inline-block;
+}
+
+#medium
+{
+    display:none;
+}
+
+img
+{
+  height: 300px;
+  width: 350px; 
+  margin-left:-25px; 
+}
+h3
+{
+    font-size:20px;
+}
+#p1
+{
+font-size: 10px
+}
+p
+{
+    font-size: 13px;
+}
+h2
+{
+ font-size: 20px;   
+}
+}
+@media only screen and (min-width:375px) and (max-width: 400px)
+{
+       #big
+{
+    display:inline-block;
+}
+
+#medium
+{
+    display:none;
+}
+
+img
+{
+  height: 300px;
+  width: 350px; 
+  margin-left:-18px; 
+}
+h3
+{
+    font-size:20px;
+}
+#p1
+{
+font-size: 10px
+}
+p
+{
+    font-size: 13px;
+}
+h2
+{
+ font-size: 20px;   
+}
+}
+@media only screen  and (min-width:414px) and (max-width: 500px)
+{
+       #big
+{
+    display:inline-block;
+}
+
+#medium
+{
+    display:none;
+}
+
+img
+{
+  height: 300px;
+  width: 350px; 
+  margin-left:-1px; 
+}
+h3
+{
+    font-size:21px;
+}
+#p1
+{
+font-size: 12px
+}
+p
+{
+    font-size: 15px;
+}
+h2
+{
+ font-size: 21px;   
+}
+}
+@media only screen and (min-width:768px) and (max-width: 900px)
+{
+       #big
+{
+    display:none;
+}
+
+#medium
+{
+    display:inline-block;
+}
+
+img
+{
+  height: 400px;
+  width: 750px; 
+  margin-left:-22px; 
+}
+h3
+{
+    font-size:21px;
+}
+#p1
+{
+font-size: 12px
+}
+p
+{
+    font-size: 15px;
+}
+h2
+{
+ font-size: 21px;   
+}
+}
+@media only screen and (min-width:900px) and (max-width: 1200px)
+{
+       #big
+{
+    display:none;
+}
+
+#medium
+{
+    display:inline-block;
+}
+
+img
+{
+  height: 400px;
+  width: 1000px; 
+  margin-left:-20px; 
+}
+h3
+{
+    font-size:26px;
+}
+#p1
+{
+font-size: 18px
+}
+p
+{
+    font-size: 19px;
+}
+h2
+{
+ font-size: 26px;   
+}
+}
+{%endblock%}
+{% block body %}
+<div class="container" id="big">
+     <aside class="col-md-12 mt-5  blog-sidebar">
+           <img src="/media/{{post.thumbnail}}" >
+        </aside><!-- /.blog-sidebar -->
+
+    <div class="row mt-4">
+        <div class="col-md-8 mx-2 blog-main">
+            <h3 class="font-italic text-secondary mx-2">
+                {{post.title}}
+            </h3>
+
+            <div class="blog-post">
+                <h2 class="blog-post-title text-secondary mx-2">{{post.heading0}}</h2>
+                <p class="blog-post-meta text-muted mx-2" id="p1">{{post.pub_date}} by <a href="#">Admin</a></p>
+                <div class="fb-like mx-2 mt-1" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true" data-colorscheme="dark" ></div>
+
+                <p  class="text-light mx-2 mt-2">{{post.chead0}}</p>
+
+
+                <h2 class="text-secondary mx-2">{{post.head1}}</h2>
+                <p class="text-light mx-2">{{post.chead1}}</p>
+                <h2 class="text-secondary mx-2">{{post.head2}}</h2>
+                <p class="text-light mx-2">{{post.chead2}}</p>
+                <div class="fb-comments"  data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5" data-width="" data-colorscheme="dark" ></div>
+               
+            </div><!-- /.blog-post -->
+
+          
+
+
+        </div><!-- /.blog-main -->
+
+       
+    </div>
+</div>
+<div class="container" id="medium">
+     <aside class="col-md-12 mt-5  blog-sidebar">
+           <img src="/media/{{post.thumbnail}}" >
+        </aside><!-- /.blog-sidebar -->
+
+    <div class="row mt-4">
+        <div class="col-md-12 mx-2 blog-main">
+            <h3 class="font-italic text-secondary mx-2">
+                {{post.title}}
+            </h3>
+
+            <div class="blog-post">
+                <h2 class="blog-post-title text-secondary mx-2">{{post.heading0}}</h2>
+                <p class="blog-post-meta text-muted mx-2" id="p1">{{post.pub_date}} by <a href="#">Admin</a></p>
+                <div class="fb-like mx-2 mt-1" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true" data-colorscheme="dark" ></div>
+
+                <p  class="text-light mx-2 mt-2">{{post.chead0}}</p>
+
+
+                <h2 class="text-secondary mx-2">{{post.head1}}</h2>
+                <p class="text-light mx-2">{{post.chead1}}</p>
+                <h2 class="text-secondary mx-2">{{post.head2}}</h2>
+                <p class="text-light mx-2">{{post.chead2}}</p>
+                <div class="fb-comments"  data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5" data-width="" data-colorscheme="dark" ></div>
+               
+            </div><!-- /.blog-post -->
+
+          
+
+
+        </div><!-- /.blog-main -->
+
+       
+    </div>
+</div>
+{% block js %}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0"></script>
+ {% endblock %}
+{% endblock %}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Photogallery</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+ a{
+    outline: none;
+}
+.dropdown-item:focus, .dropdown-item:hover
+{
+    background-color:white;
+    color:black;
+}
+.dropdown-item:focus, .dropdown-item
+{
+    color:white;
+}
+#img-top
+{
+ height:250px;
+ width:300px;   
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+    $(window).load(function() {
+
+        $("#img1").hide();
+        $("#div1").show();
+
+    });
+    </script>
+</head>
+
+<body class="bg-dark">
+    <p style="text-align:center;"><img src="/media/images/828.gif" id="img1"></p>
+    <div id="div1">
+        {%for photos in allProds%}
+        <h5 class="my-4 mx-5 text-light" style="font-size: 36px;">{{photos.0.category}} Photos</h5>
+        <div class="md-12">
+            <div class="row my-5">
+                {%for photo in photos%}
+                <div class="mx-2" style="width: 22rem;">
+                    <a href="/blog/Imageview/{{photo.id}}"> <img src="/media/{{photo.image}}" class="mx-5" id="img-top" alt="..."></a>
+                    <span class="card-title mx-5 text-secondary">{{photo.category}}</span><span class="text-light" style="margin-left: 58px;">Uploaded By:<a href="#" style="text-decoration: none;"><i>{{photo.upload_by}}</i></a></span><br />
+                    <span class=" mx-5 text-secondary">{{photo.title}}</span>
+                </div>
+                {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+            </div>
+            <div class="row  my-5">
+                {%endif%}
+                {%endfor%}
+            </div>
+            {%endfor%}
+        </div>
+        {% if photos.has_other_pages %}
+        <nav aria-label="...">
+            <ul class="pagination justify-content-center">
+                {% if photos.has_previous %}
+                <li class="page-item"><a href="?page={{ photos.previous_page_number }}" class="page-link">Previous</a></li>
+                {% else %}
+                <li class="disabled text-light" tabindex="-1" aria-disabled="true"><span></span></li>
+                {% endif %}
+                {% for i in photos.paginator.page_range %}
+                {% if photos.number == i %}
+                <li class="page-item active" aria-current="page"><a href="#" class="page-link"><span>{{ i }} <span class="sr-only">(current)</span></span></a></li>
+                {% else %}
+                <li class="page-item"><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if photos.has_next %}
+                <li class="page-item"><a href="?page={{ photos.next_page_number }}" class="page-link">Next</a></li>
+                {% else %}
+                <li class="disabled text-light" tabindex="-1" aria-disabled="true"><span></span></li>
+                {% endif %}
+            </ul>
+            {% endif %}
+            <script>
+                console.log("enter");
+            {% if msg|length != 0 %}
+            console.log("doing");
+            alert('{{msg}}');
+            window.location.href = "/";
+             {% endif %}
+            </script>
+</body>
+
+</html>

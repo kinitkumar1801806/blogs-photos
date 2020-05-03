@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <title>PhotoGallery</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        #div1
+{
+display:none;
+margin-top: -15px;
+}
+
+#img1
+{
+margin-top:265px;
+height:150px;
+width:250px;
+}  
+
+a{
+    outline: none;
+}
+.dropdown-item:focus, .dropdown-item:hover
+{
+    background-color:white;
+    color:black;
+}
+.dropdown-item:focus, .dropdown-item
+{
+    color:white;
+}
+
+#img-top
+{
+ height:250px;
+ width:300px; 
+ margin-left:85px;
+}
+#img2
+{
+height:500px;
+width:100px;    
+}
+#tit
+{
+margin-left:85px;
+}
+#tit1
+{
+margin-left:85px;
+}
+#medium1
+{
+display:none;
+}
+#medium
+{
+display:none;
+}
+#small
+{
+display:none;
+}
+#big
+{
+    display:inline-block;
+}
+@media only screen and (max-width:360px)
+{
+#big{
+display:none;
+}
+#small
+{
+display:inline-block;
+}
+#medium
+{
+    display: none;
+}
+#medium1
+{
+display:none;
+}
+#img-top
+{
+ height:250px; 
+ margin-left:45px;
+}
+#tit
+{
+margin-left:50px;
+}
+#tit1
+{
+margin-left:50px;
+}
+#img1
+{
+margin-top:220px;
+height:150px;
+width:250px;
+
+} 
+}
+@media only screen and (min-width:375px) and (max-width: 400px)
+{
+#big{
+display:none;
+}
+#small
+{
+display:inline-block;
+}
+#medium
+{
+    display: none;
+}
+#medium1
+{
+display:none;
+}
+#img1
+{
+margin-top:250px;
+height:150px;
+width:250px;
+} 
+
+#img-top
+{
+ height:250px; 
+ margin-left:55px;
+}
+#tit
+{
+margin-left:58px;
+}
+#tit1
+{
+margin-left:58px;
+}
+}
+@media only screen and (min-width:414px) and (max-width: 500px)
+{
+#big{
+display:none;
+}
+#small
+{
+display:inline-block;
+}
+#medium
+{
+    display: none;
+}
+#medium1
+{
+display:none;
+}
+#img-top
+{
+ height:250px; 
+ margin-left:68px;
+}
+#img1
+{
+margin-top:310px;
+height:150px;
+width:250px;
+} 
+ 
+
+#tit
+{
+margin-left:67px;
+}
+#tit1
+{
+margin-left:67px;
+}
+}
+@media only screen and (min-width:900px) and (max-width: 1200px)
+{
+#big{
+display:none;
+}
+#small
+{
+display:none;
+}
+#medium
+{
+display:none;
+}
+#medium1
+{
+display:inline-block;
+}
+#img-top
+{
+ height:250px; 
+ margin-left:90px;
+}
+#tit
+{
+margin-left:90px;
+}
+#tit1
+{
+margin-left:90px;
+}
+#img1
+{
+margin-top:280px;
+height:150px;
+width:250px;
+} 
+
+
+}
+@media only screen and (min-width:768px) and (max-width: 900px)
+{
+#big{
+display:none;
+}
+#small
+{
+display:none;
+}
+#medium1
+{
+display:none;
+}
+#medium
+{
+display:inline-block;
+}
+#img-top
+{
+ height:250px; 
+ margin-left:68px;
+}
+#tit
+{
+margin-left:75px;
+}
+#tit1
+{
+margin-left:75px;
+}
+#img1
+{
+margin-top:440px;
+height:150px;
+width:250px;
+}
+}
+#img1
+{
+margin-top:265px;
+height:150px;
+width:250px;
+} 
+
+}
+
+</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(window).load(function () {
+       
+        $("#img1").hide();
+        $("#div1").show();
+
+    });
+</script>
+</head>
+
+<body class="bg-dark">
+    <p style="text-align:center;"><img src="/media/images/828.gif" id="img1"></p>
+    <div id="div1">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Photogallery</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown bg-dark">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Photos
+                        </a>
+                       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/blog/animals_photo/">Animals</a>
+                            <a class="dropdown-item" href="/blog/accessories_photo/">Accessories</a>
+                            <a class="dropdown-item" href="/blog/heritage_photo/">Heritage</a>
+                            <a class="dropdown-item" href="/blog/holyplaces_photo/">Holy Places</a>
+                            <a class="dropdown-item" href="/blog/monuments_photo/">Monuments</a>
+                            <a class="dropdown-item" href="/blog/nature_photo/">Nature</a>
+                            <a class="dropdown-item" href="/blog/vehicles_photo/">Vehicles</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown bg-dark">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Blogs
+                        </a>
+                        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Defence</a>
+                            <a class="dropdown-item" href="#">Softwares</a>
+                            <a class="dropdown-item" href="/blog/blogview/">Photography</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog/contact/">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog/blogview/">About Us</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" action="/blog/search/">
+                    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+            <div id="big" class="md-12">
+                <div class="row my-5" style="margin-top: 10px;">
+                    {%for photo in photos%}
+                    <div id="con" style="width: 22rem;">
+                        <a href="/blog/monuments_Imageview/{{photo.id}}"> <img src="/media/{{photo.image}}" id="img-top" alt="..."></a>
+                        <span id="tit" class="card-title text-secondary">{{photo.category}}</span><span class="text-light" style="margin-left: 73px;">Uploaded By:<a href="#" style="text-decoration: none;"><i>{{photo.upload_by}}</i></a></span><br />
+                        <span id="tit1" class="text-secondary">{{photo.title}}</span>
+                    </div>
+                    {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+                </div>
+                <div class="row  my-5" style="margin-top: 10px;">
+                    {%endif%}
+                    {%endfor%}
+                </div>
+            </div>
+            <div id="medium" class="md-12">
+                <div class="row my-5">
+                    {%for photo in photos%}
+                    <div id="con" style="width: 22rem;">
+                        <a href="/blog/monuments_Imageview/{{photo.id}}"> <img src="/media/{{photo.image}}" id="img-top" alt="..."></a>
+                        <span id="tit" class="card-title text-secondary">{{photo.category}}</span><span class="text-light" style="margin-left: 73px;">Uploaded By:<a href="#" style="text-decoration: none;"><i>{{photo.upload_by}}</i></a></span><br />
+                        <span id="tit1" class="text-secondary">{{photo.title}}</span>
+                    </div>
+                    {% if forloop.counter|divisibleby:2 and forloop.counter > 0 and not forloop.last %}
+                </div>
+                <div class="row  my-5">
+                    {%endif%}
+                    {%endfor%}
+                </div>
+            </div>
+            <div id="medium1" class="md-12">
+                <div class="row my-5 " style="margin-left:100px;">
+                    {%for photo in photos%}
+                    <div id="con" style="width: 22rem;">
+                        <a href="/blog/monuments_Imageview/{{photo.id}}"> <img src="/media/{{photo.image}}" id="img-top" alt="..."></a>
+                        <span id="tit" class="card-title text-secondary">{{photo.category}}</span><span class="text-light" style="margin-left: 68px;">Uploaded By:<a href="#" style="text-decoration: none;"><i>{{photo.upload_by}}</i></a></span><br />
+                        <span id="tit1" class="text-secondary">{{photo.title}}</span>
+                    </div>
+                    {% if forloop.counter|divisibleby:2 and forloop.counter > 0 and not forloop.last %}
+                </div>
+                <div class="row  my-5" style="margin-left:100px;">
+                    {%endif%}
+                    {%endfor%}
+                </div>
+            </div>
+            <div id="small" class="md-12">
+                <div class="row my-5">
+                    {%for photo in photos%}
+                    <div id="con" style="width: 22rem;">
+                        <a href="/blog/monuments_Imageview/{{photo.id}}"> <img src="/media/{{photo.image}}" id="img-top" alt="..."></a>
+                        <span id="tit" class="card-title text-secondary">{{photo.category}}</span><span class="text-light" style="margin-left: 91px;">Uploaded By:<a href="#" style="text-decoration: none;"><i>{{photo.upload_by}}</i></a></span><br />
+                        <span id="tit1" class="text-secondary">{{photo.title}}</span>
+                    </div>
+                    {% if forloop.counter|divisibleby:1 and forloop.counter > 0 and not forloop.last %}
+                </div>
+                <div class="row  my-5">
+                    {%endif%}
+                    {%endfor%}
+                </div>
+            </div>
+            {% if photos.has_other_pages %}
+            <nav aria-label="...">
+                <ul class="pagination justify-content-center">
+                    {% if photos.has_previous %}
+                    <li class="page-item"><a href="?page={{ photos.previous_page_number }}" class="page-link">Previous</a></li>
+                    {% else %}
+                    <li class="disabled text-light" tabindex="-1" aria-disabled="true"><span></span></li>
+                    {% endif %}
+                    {% for i in photos.paginator.page_range %}
+                    {% if photos.number == i %}
+                    <li class="page-item active" aria-current="page"><a href="#" class="page-link"><span>{{ i }} <span class="sr-only">(current)</span></span></a></li>
+                    {% else %}
+                    <li class="page-item"><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                    {% if photos.has_next %}
+                    <li class="page-item"><a href="?page={{ photos.next_page_number }}" class="page-link">Next</a></li>
+                    {% else %}
+                    <li class="disabled text-light" tabindex="-1" aria-disabled="true"><span></span></li>
+                    {% endif %}
+                </ul>
+            </nav>
+                {% endif %}
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>

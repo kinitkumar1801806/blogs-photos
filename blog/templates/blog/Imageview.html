@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>Page Title</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        #div1
+{
+display:none;
+margin-top: -15px;
+}
+
+#img1
+{
+margin-top:265px;
+height:150px;
+width:250px;
+} 
+img
+{
+    height:900px;
+    width: 1550px;
+}
+@media only screen and (max-width:360px)
+{
+img
+{
+    height:640px;
+    width: 360px;
+}
+#img1
+{
+margin-top:220px;
+height:150px;
+width:250px;
+
+}
+}
+@media only screen and (min-width:375px) and (max-width: 400px)
+{
+img
+{
+    height:667px;
+    width: 375px;
+}
+#img1
+{
+margin-top:250px;
+height:150px;
+width:250px;
+} 
+}
+@media only screen and (min-width:414px) and (max-width: 500px)
+{
+img
+{
+    height:736px;
+    width: 414px;
+}
+#img1
+{
+margin-top:310px;
+height:150px;
+width:250px;
+} 
+
+}
+@media only screen and (min-width:900px) and (max-width: 1200px)
+{
+img
+{
+    height:768px;
+    width: 1024px;
+}
+#img1
+{
+margin-top:280px;
+height:150px;
+width:250px;
+} 
+
+}
+@media only screen and (min-width:768px) and (max-width: 900px)
+{
+img
+{
+    height:1024px;
+    width: 768px;
+}
+#img1
+{
+margin-top:440px;
+height:150px;
+width:250px;
+} 
+}
+{%block css%}{%endblock%}
+</style>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(window).load(function () {
+       
+        $("#img1").hide();
+        $("#div1").show();
+
+    });
+</script>
+</head>
+
+<body class="bg-dark">
+    <p style="text-align:center;"><img src="/media/images/pre3.gif" id="img1"></p>
+    <div id="div1">
+        <img src="/media/{{image}}" id="img2">
+     </div>
+</body>
+
+</html>

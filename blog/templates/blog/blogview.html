@@ -1,0 +1,116 @@
+{% extends 'blog/basic.html' %}
+{%block css%}
+
+@media only screen and (max-width:360px)
+{
+h3
+{
+ font-size:20px;
+}
+h6
+{
+  font-size:15px;
+}
+strong
+{
+ font-size: 18px;   
+}
+}
+@media only screen and (min-width:375px) and (max-width: 400px)
+{
+h3
+{
+ font-size:20px;
+}
+h6
+{
+  font-size:15px;
+}
+strong
+{
+ font-size: 18px;   
+}
+}
+@media only screen  and (min-width:414px) and (max-width: 500px)
+{
+h3
+{
+ font-size:22px;
+}
+h6
+{
+  font-size:16px;
+}
+strong
+{
+ font-size: 20px;   
+}
+}
+@media only screen and (min-width:768px) and (max-width: 900px)
+{
+h3
+{
+ font-size:22px;
+}
+h6
+{
+  font-size:16px;
+}
+strong
+{
+ font-size: 20px;   
+}
+}
+{%endblock%}
+{% block body %}
+ <div class="container my-3">
+     <div class="row mb-2 text-light">
+     {% for item in myposts%}
+
+    <div class="col-md-12 my-5">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0  text-secondary" >{{item.title}}</h3>
+          <div class="mb-1  text-muted">{{item.pub_date}}</div>
+          <strong class="d-inline-block mb-2  text-secondary">{{item.head0}}</strong>
+          <h6 class="card-text mb-auto text-break  text-light">{{item.chead0|slice:"0:200"}}...</h6>
+          <strong class="d-inline-block mb-2 text-secondary">{{item.head1}}</strong>
+          <h6 class="card-text mb-auto text-break  text-light">{{item.chead1|slice:"0:250"}}....</h6>
+          <a href="/blog/blogpost/{{item.post_id}}" class="stretched-link ">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/media/{{item.thumbnail}}" class="bd-placeholder-img" width="350" height="350" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title>
+
+        </div>
+      </div>
+    </div>
+       {% if forloop.counter|divisibleby:1 %}
+     </div><div class="row mb-2">
+     {% endif %}
+
+       {% endfor %}
+ {% if photos.has_other_pages %}
+        <nav aria-label="...">
+            <ul class="pagination justify-content-center">
+                {% if photos.has_previous %}
+                <li class="page-item"><a href="?page={{ photos.previous_page_number }}" class="page-link">Previous</a></li>
+                {% else %}
+                <li class="disabled text-light" tabindex="-1" aria-disabled="true"><span></span></li>
+                {% endif %}
+                {% for i in photos.paginator.page_range %}
+                {% if photos.number == i %}
+                <li class="page-item active" aria-current="page"><a href="#" class="page-link"><span>{{ i }} <span class="sr-only">(current)</span></span></a></li>
+                {% else %}
+                <li class="page-item"><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if photos.has_next %}
+                <li class="page-item"><a href="?page={{ photos.next_page_number }}" class="page-link">Next</a></li>
+                {% else %}
+                <li class="disabled text-light" tabindex="-1" aria-disabled="true"><span></span></li>
+                {% endif %}
+            </ul>
+            {% endif %}
+</div>
+</div>
+   {% endblock %}
